@@ -1,0 +1,21 @@
+# NOTE: Should result in no tracebacks due to human error or foolishness.
+num = 0
+tot = 0.0
+while True:
+    sval = input("Enter a number or DONE: ").lower()
+    if sval == "":
+        continue
+    elif sval == "done" and num == 0:
+        print("Enter at least one number first!\n")
+        continue
+    elif sval == "done":
+        break
+    try:
+        fval = float(sval)
+    except:
+        print("Invalid input!\n")
+        continue
+    num += 1
+    tot += fval
+print("ALL DONE!\n")
+input(f"The total is {tot}, the number count is {num}, and the average is {tot/num}\nPress RETURN to close the program...")
